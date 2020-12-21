@@ -129,7 +129,7 @@ The file `evaluate/topic_relevance.py` is used to evaluate the generated questio
 
 ### Usage
 
-$ python evaluate/topic_relevance.py [-h] keyword
+    $ python evaluate/topic_relevance.py [-h] keyword
 
 ### Positional Arguments
 
