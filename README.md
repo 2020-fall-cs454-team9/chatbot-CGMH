@@ -86,7 +86,7 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 
 ### Usage
 
-`$ python evaluate/diversity.py [-h] [-a A] [-b B] file`
+`$ python evaluate/diversity.py [-h] [--output] [-a A] [-b B] file`
 
 ### Positional Arguments
 
@@ -99,6 +99,10 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 `-h, --help`
 
 > shows the help message and exits
+
+`--output`
+
+> add this argument to evaluate generated questions (instead of chatbot conversation)
 
 `-a A`
 
