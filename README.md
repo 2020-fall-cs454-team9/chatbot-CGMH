@@ -2,6 +2,12 @@ _Note: this repository was created solely for the purpose of submitting. The com
 
 # Search Based Test Input Generation for Chatbot Testing
 
+#### KAIST 2020 Fall CS454 Team 9
+- Jeongeon Park 20160811
+- Suro Lee 20160830
+- Seungho Kim 20170798
+- Chanhee Lee 201708XX
+
 ## Introduction
 
 In this project, we propose a search-based approach that automatically generates chatbot test input of high quality. Our approach uses the Metropolis-Hasting algorithm, where we improve on an existing paper by N. Miao et al. (2019) to generate input data in the form of questions. Through our comparison with human-generated test input in terms of both the generated test input and the chatbot output when putting in the generated test input, we show that the model-generated test input using our approach is more diverse and relevant to the topic keyword than the human-generated test input.
