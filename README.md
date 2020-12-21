@@ -126,6 +126,9 @@ The file `evaluate/topic_relevance.py` is used to evaluate the generated questio
 
 2. Use the sentences generated in output.txt to put them in the arrays input_text1, 2, and 3.
 
+## Usage
+$ python evaluate/topic_relevance.py 
+
 ## Example
 
 Train forward/backward language model
