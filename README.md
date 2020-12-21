@@ -1,4 +1,4 @@
-_Note: this repository was created solely for the purpose of submitting the project. The commits made to this repository does not accurately represent the individual contributions made by each member._
+_Note: this repository was created solely for the purpose of organizing and submitting our finalized project. The commits made to this repository do not accurately represent the individual contributions from each member._
 
 # Search Based Test Input Generation for Chatbot Testing
 
