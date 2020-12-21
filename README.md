@@ -39,13 +39,13 @@ To use a pre-trained language model, [download](https://drive.google.com/drive/f
 
 > include this argument to train the backward model (instead of the forward model)
 
-`-e, --epoch (type: int, default: 100)`
+`-e, --epoch`
 
-> sets the maximum number of epochs to run
+> sets the maximum number of epochs to run (type: int, default: 100)
 
-`-b, --batch (type: int, default: 32)`
+`-b, --batch`
 
-> sets the batch size
+> sets the batch size (type: int, default: 32)
 
 ## Generate Questions
 
@@ -71,8 +71,8 @@ Generated questions and the steps taken are written into `data/output/output.txt
 
 `-a A`
 
-> index of the first message to evaluate (defaults to 0)
+> index of the first message to evaluate (type: int, default: 0)
 
 `-b B`
 
-> index of the last message to evaluate (defaults to the last index)
+> index of the last message to evaluate (type: int, default: last index)
