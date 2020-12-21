@@ -118,7 +118,16 @@ _Only for chatbot responses_
 
 ## Evaluation: Topic Relevance
 
-<!-- Add topic relevance evaluation method here  -->
+The file `evaluate/topic_relevance.py` is used to evaluate the generated questions.
+
+### Evaluate Generated Questions
+
+1. Generate the questions file `data/output/output.txt`.
+
+2. Use the sentences generated in output.txt to put them in the arrays input_text1, 2, and 3.
+
+### Usage
+$ python evaluate/topic_relevance.py 
 
 ## Example
 
