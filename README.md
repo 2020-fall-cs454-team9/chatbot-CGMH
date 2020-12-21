@@ -124,10 +124,12 @@ The file `evaluate/topic_relevance.py` is used to evaluate the generated questio
 
 1. Generate the questions file `data/output/output.txt`.
 
-2. Use the sentences generated in output.txt to put them in the arrays input_text1, 2, and 3.
+2. Divide the sentences generated in `output.txt` by the keyword used, and place them in the arrays `input_text1`, `input_text2`, and `input_text3`.
+    - Only three topics can be covered during one evaluation run.
 
 ### Usage
-$ python evaluate/topic_relevance.py 
+
+    $ python evaluate/topic_relevance.py
 
 ## Example
 
