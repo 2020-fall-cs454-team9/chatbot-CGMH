@@ -16,11 +16,17 @@ In this project, we propose a search-based approach that automatically generates
 ## Requirements
 
 -   python 3.8
+
+-   Training and generation
     -   TensorFlow `== 2.3.1` (other versions are not tested)
     -   numpy
     -   pickle
+-   Evaluation
     -   spaCy
         -   run `python -m spacy download en_core_web_lg` to download the required model
+    -   gensim
+    -   pandas
+    -   nltk
 
 ## Train Language Model
 
@@ -28,7 +34,7 @@ To use a pre-trained language model, [download](https://drive.google.com/drive/f
 
 ### Usage
 
-`python model/train.py [-h] [--backward] [-e EPOCH] [-b BATCH]`
+`$ python model/train.py [-h] [--backward] [-e EPOCH] [-b BATCH]`
 
 ### Optional Arguments
 
@@ -54,17 +60,18 @@ Optional: insert your own keywords (from which the questions are generated) into
 
 ### Usage
 
-`python model/questions_gen.py`
+`$ python model/questions_gen.py`
 
 Generated questions and the steps taken are written into `data/output/output.txt`.
 
-## Evaluation
+## Evaluation - Diversity
 
-The file `diversity.py` is used to evaluate both [1] the generated questions and [2] the chatbot's responses.
+The file `evaluate/diversity.py` is used to evaluate both [1] the generated questions and [2] the chatbot's responses.
 
 ### Evaluate Generated Questions
 
 1. Generate the questions file `data/output/output.txt`.
+
 2. Use this file's path as the `file` argument.
 
 ### Evluate Chatbot Responses
@@ -79,15 +86,15 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 
 ### Usage
 
-`python evaluate/diversity.py [-h] [-a A] [-b B] file`
+`$ python evaluate/diversity.py [-h] [-a A] [-b B] file`
 
 ### Positional Arguments
 
 `file`
 
-> path of the `.txt` file to be used for evaluation.
+> relative path of the `.txt` file to be used for evaluation.
 
-### Optional Arguments
+### Optional Arguments (Only for Chatbot Responses)
 
 `-h, --help`
 
@@ -100,3 +107,31 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 `-b B`
 
 > index of the last message to evaluate (type: int, default: last index)
+
+## Evaluation - Topic Relevance
+
+???
+
+## Example
+
+Train forward/backward language model
+
+> `$ python model/train.py`
+>
+> `$ python model/train.py --backward`
+
+Generate questions
+
+> `$ python model/questions_gen.py`
+
+Evaluate diversity of generated questions
+
+> `$ python evaluate/diversity.py --output ../data/output/output.txt`
+
+Parse chatbot conversation
+
+> `$ python evaluate/parseMessages.py message_1.json data.txt`
+
+Evaluate diversity of chatbot responses
+
+> `$ python evaluate/diversity.py data.txt`

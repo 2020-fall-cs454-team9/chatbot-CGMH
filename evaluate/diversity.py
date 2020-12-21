@@ -4,6 +4,7 @@ import sys
 
 import argparse
 parser = argparse.ArgumentParser()
+parser.add_argument('--output', dest='output', action='store_true', help='evaluate generated questions (instead of chatbot output)')
 parser.add_argument("file", type=str, help="path to the file with the sentences to evaluate")
 parser.add_argument("-a", type=int, default=0, help="index of first message list to evaluate")
 parser.add_argument("-b", type=int, default=-1, help="index of last message list to evaluate")
@@ -116,7 +117,7 @@ inp = [
 ]
 '''
 
-with open('data2.txt') as f:
+with open(args.file) as f:
     messages = json.load(f)
 
 a = args.a
