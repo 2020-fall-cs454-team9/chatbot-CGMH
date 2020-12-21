@@ -74,7 +74,7 @@ The file `evaluate/diversity.py` is used to evaluate both [1] the generated ques
 
 2. Use this file's path as the `file` argument.
 
-### Evluate Chatbot Responses
+### Evaluate Chatbot Responses
 
 For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots.io) as our test chatbot.
 
