@@ -21,8 +21,7 @@ def processText(text):
             continue
         if token.lemma_ == '-PRON-':
             continue
-        if 'music' in token.text:
-            continue
+   
         result.append(token.lemma_)
     return " ".join(result)
 
