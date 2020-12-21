@@ -27,7 +27,7 @@ To use a pre-trained language model, [download](https://drive.google.com/drive/f
 
 ### Usage
 
-`python model/train.py [-h] [--backward]`
+`python model/train.py [-h] [--backward] [-e EPOCH] [-b BATCH]`
 
 ### Optional Arguments
 
