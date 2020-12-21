@@ -129,7 +129,13 @@ The file `evaluate/topic_relevance.py` is used to evaluate the generated questio
 
 ### Usage
 
-    $ python evaluate/topic_relevance.py
+    $ python evaluate/topic_relevance.py [keyword]
+    
+### Positional Arguments
+
+`keyword`
+
+> for choosing a keyword (e.g. sports) to filter sentences from output.txt
 
 ## Example
 
