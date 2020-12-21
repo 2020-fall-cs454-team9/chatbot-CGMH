@@ -240,18 +240,18 @@ for sen_id, data in enumerate(dataset.as_numpy_iterator()): # For each sentence 
         if outputs != []:
             output_p.append(outputs[-1][0])
 
-    for num in range(config.max_length, 0, -1):
+    results = []
+    for num in range(config.max_length, 3, -1):
         outputss = [x for x in outputs if len(x[0].split()) == num]
         if len(outputss) == 0:
             continue
-        print(num, outputss)
-        # if outputs != []:
-        #     continue
-        # if outputss == []:
-        #     outputss.append([' '.join(id2sen(input)), 1])
+        print(num, outputss)        
         outputss = sorted(outputss, key=lambda x: x[1])[::-1]  # reverse list using [::-1]
-        outputss = outputss[:5]  # get 5 most likely sentneces of each length
-        outputss = map(lambda t: t[0], outputss)
-        with open(config.use_output_path, 'a') as g:
-            for sent in outputss:
-                g.write(sent + '\n')
+        outputss = outputss[:2]  # get 2 most likely sentneces of each length
+        results += outputss
+
+    results = sorted(results, key=lambda x: x[1])[::-1]  # reverse list using [::-1]
+    results = list(map(lambda t: t[0], results))[:3]
+    with open(config.use_output_path, 'a') as g:
+        for sent in results:
+            g.write(sent + '\n')
