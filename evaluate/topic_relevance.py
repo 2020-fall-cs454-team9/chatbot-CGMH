@@ -25,7 +25,7 @@ def processText(text):
 input_text = []
 f = sys.argv[1]
 keyword = sys.argv[2]
-file = open("output.txt", "r")
+file = open("..\data\output\output.txt", "r")
 for x in file:
   if keyword in x:
     input_text.append(x)
