@@ -6,7 +6,7 @@ _Note: this repository was created solely for the purpose of submitting. The com
 - Jeongeon Park 20160811
 - Suro Lee 20160830
 - Seungho Kim 20170798
-- Chanhee Lee 201708XX
+- Chanhee Lee 20170828
 
 ## Introduction
 
