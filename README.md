@@ -129,7 +129,13 @@ The file `evaluate/topic_relevance.py` is used to evaluate the generated questio
 
 ### Usage
 
-    $ python evaluate/topic_relevance.py
+    $ python evaluate/topic_relevance.py [-h] keyword
+
+### Positional Arguments
+
+`keyword`
+
+> questions generated with this keyword will be chosen from output.txt to evaluate relevance
 
 ## Example
 
@@ -143,9 +149,11 @@ Generate questions
 
     $ python model/questions_gen.py
 
-Evaluate diversity of generated questions
+Evaluate diversity and topic relevance (example with sports) of generated questions
 
     $ python evaluate/diversity.py --output ../data/output/output.txt
+
+    $ python evaluate/topic_relevance.py sports
 
 Parse and evaluate diversity of chatbot conversation
 

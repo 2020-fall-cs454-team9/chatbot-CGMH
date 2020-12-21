@@ -6,6 +6,12 @@ import spacy
 import nltk
 import sys
 
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("keyword", type=str, help="questions generated with this keyword will be chosen from output.txt to evaluate relevance")
+args = parser.parse_args()
+
 
 def processText(text):
     nlp = spacy.load("en_core_web_md")
@@ -23,11 +29,9 @@ def processText(text):
 
 # Getting Arguments
 input_text = []
-f = sys.argv[1]
-keyword = sys.argv[2]
 file = open("..\data\output\output.txt", "r")
 for x in file:
-  if keyword in x:
+  if parser.keyword in x:
     input_text.append(x)
 
 # # Sports
