@@ -2,8 +2,8 @@ import json, sys
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("message", type=str, help="path of the JSON message file")
-parser.add_argument("parsed", type=str, help="path of the parsed .txt file")
+parser.add_argument("message", type=str, help="path to the JSON message file")
+parser.add_argument("parsed", type=str, help="path to the parsed .txt file")
 args = parser.parse_args()
 
 with open(args.message) as f:

@@ -3,10 +3,11 @@ _Note: this repository was created solely for the purpose of submitting. The com
 # Search Based Test Input Generation for Chatbot Testing
 
 #### KAIST 2020 Fall CS454 Team 9
-- Jeongeon Park 20160811
-- Suro Lee 20160830
-- Seungho Kim 20170798
-- Chanhee Lee 20170828
+
+-   Jeongeon Park 20160811
+-   Suro Lee 20160830
+-   Seungho Kim 20170798
+-   Chanhee Lee 20170828
 
 ## Introduction
 
@@ -39,17 +40,17 @@ To use a pre-trained language model, [download](https://drive.google.com/drive/f
 
 > include this argument to train the backward model (instead of the forward model)
 
-`-e, --epoch`
+`-e EPOCH, --epoch EPOCH`
 
 > sets the maximum number of epochs to run (type: int, default: 100)
 
-`-b, --batch`
+`-b BATCH, --batch BATCH`
 
 > sets the batch size (type: int, default: 32)
 
 ## Generate Questions
 
-Optional: insert your own keywords from which the questions are generated into `data/input/keywords.txt`.
+Optional: insert your own keywords (from which the questions are generated) into `data/input/keywords.txt`.
 
 ### Usage
 
@@ -59,11 +60,34 @@ Generated questions and the steps taken are written into `data/output/output.txt
 
 ## Evaluation
 
-#### Usage
+The file `diversity.py` is used to evaluate both [1] the generated questions and [2] the chatbot's responses.
 
-`python evaluate/diversity.py [-h] [-a A] [-b B]`
+### Evaluate Generated Questions
 
-#### Optional Arguments
+1. Generate the questions file `data/output/output.txt`.
+2. Use this file's path as the `file` argument.
+
+### Evluate Chatbot Responses
+
+For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots.io) as our test chatbot.
+
+1. Enter each question into the chat, and download the conversation as a `.json` file.
+
+2. Parse the conversation using `evaluate/parseMessages.py` (for usage, add the `--help` argument for details.)
+
+3. Use the parsed file's path as the `file` argument.
+
+### Usage
+
+`python evaluate/diversity.py [-h] [-a A] [-b B] file`
+
+### Positional Arguments
+
+`file`
+
+> path of the `.txt` file to be used for evaluation.
+
+### Optional Arguments
 
 `-h, --help`
 
