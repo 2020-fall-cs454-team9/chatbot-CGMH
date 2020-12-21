@@ -4,10 +4,10 @@ _Note: this repository was created solely for the purpose of submitting. The com
 
 #### KAIST 2020 Fall CS454 Team 9
 
--   Jeongeon Park 20160811
--   Suro Lee 20160830
--   Seungho Kim 20170798
--   Chanhee Lee 20170828
+-   20160811 Jeongeon Park
+-   20160830 Suro Lee
+-   20170798 Seungho Kim
+-   20170828 Chanhee Lee
 
 ## Introduction
 
@@ -23,7 +23,7 @@ In this project, we propose a search-based approach that automatically generates
     -   pickle
 -   Evaluation
     -   spaCy
-        -   run `python -m spacy download en_core_web_lg` to download the required model
+        -   after installing, run `python -m spacy download en_core_web_lg` to download the required model
     -   gensim
     -   pandas
     -   nltk
@@ -132,10 +132,8 @@ Evaluate diversity of generated questions
 
 > `$ python evaluate/diversity.py --output ../data/output/output.txt`
 
-Parse chatbot conversation
+Parse and evaluate diversity of chatbot conversation
 
 > `$ python evaluate/parseMessages.py message_1.json data.txt`
-
-Evaluate diversity of chatbot responses
-
+>
 > `$ python evaluate/diversity.py data.txt`
