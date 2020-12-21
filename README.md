@@ -1,4 +1,4 @@
-_Note: this repository was created solely for the purpose of submitting. The commits made to this repository does not accurately represent the individual contributions made by each member._
+_Note: this repository was created solely for the purpose of submitting the project. The commits made to this repository does not accurately represent the individual contributions made by each member._
 
 # Search Based Test Input Generation for Chatbot Testing
 
@@ -62,9 +62,9 @@ Optional: insert your own keywords (from which the questions are generated) into
 
     $ python model/questions_gen.py
 
-Generated questions and the steps taken are written into `data/output/output.txt`.
+Generated questions are written into `data/output/output.txt`.
 
-## Evaluation - Diversity
+## Evaluation: Diversity
 
 The file `evaluate/diversity.py` is used to evaluate both [1] the generated questions and [2] the chatbot's responses.
 
@@ -116,9 +116,9 @@ _Only for chatbot responses_
 
 > index of the last message to evaluate (type: int, default: last index)
 
-## Evaluation - Topic Relevance
+## Evaluation: Topic Relevance
 
-???
+<!-- Add topic relevance evaluation method here  -->
 
 ## Example
 
