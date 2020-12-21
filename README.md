@@ -34,7 +34,7 @@ To use a pre-trained language model, [download](https://drive.google.com/drive/f
 
 ### Usage
 
-`$ python model/train.py [-h] [--backward] [-e EPOCH] [-b BATCH]`
+    $ python model/train.py [-h] [--backward] [-e EPOCH] [-b BATCH]
 
 ### Optional Arguments
 
@@ -60,7 +60,7 @@ Optional: insert your own keywords (from which the questions are generated) into
 
 ### Usage
 
-`$ python model/questions_gen.py`
+    $ python model/questions_gen.py
 
 Generated questions and the steps taken are written into `data/output/output.txt`.
 
@@ -86,7 +86,7 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 
 ### Usage
 
-`$ python evaluate/diversity.py [-h] [--output] [-a A] [-b B] file`
+    $ python evaluate/diversity.py [-h] [--output] [-a A] [-b B] file
 
 ### Positional Arguments
 
@@ -120,20 +120,20 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 
 Train forward/backward language model
 
-> `$ python model/train.py`
->
-> `$ python model/train.py --backward`
+    $ python model/train.py
+
+    $ python model/train.py --backward
 
 Generate questions
 
-> `$ python model/questions_gen.py`
+    $ python model/questions_gen.py
 
 Evaluate diversity of generated questions
 
-> `$ python evaluate/diversity.py --output ../data/output/output.txt`
+    $ python evaluate/diversity.py --output ../data/output/output.txt
 
 Parse and evaluate diversity of chatbot conversation
 
-> `$ python evaluate/parseMessages.py message_1.json data.txt`
->
-> `$ python evaluate/diversity.py data.txt`
+    $ python evaluate/parseMessages.py message_1.json data.txt
+
+    $ python evaluate/diversity.py data.txt
