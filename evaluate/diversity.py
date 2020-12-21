@@ -116,17 +116,29 @@ inp = [
 "What is your favorite idol music?"
 ]
 '''
+if (args.output):
+    with open(args.file) as f:
+        messages = json.load(f)
 
-with open(args.file) as f:
-    messages = json.load(f)
+    a = args.a
+    b = args.b if args.b > -1 else len(messages)
 
-a = args.a
-b = args.b if args.b > -1 else len(messages)
+    print("RESULTS from", a, 'to', b)
 
-print("RESULTS from", a, 'to', b)
+    for msglist in messages[int(a): int(b)+1]:
+        sent_score, p_sent_score, word_score = calcSimilarityScore(msglist[:])
+        result = {'index': messages.index(msglist), 'p_sent_score': p_sent_score}
+        with open('diversity_result.txt', 'a') as outfile:
+            json.dump(result, outfile)
 
-for msglist in messages[int(a): int(b)+1]:
-    sent_score, p_sent_score, word_score = calcSimilarityScore(msglist[:])
-    result = {'index': messages.index(msglist), 'p_sent_score': p_sent_score}
+else:
+    with open(args.file) as f:
+        contents =f.read()
+    
+    messages = contents.split('\n')
+
+    sent_score, p_sent_score, word_score = calcSimilarityScore(messages)
+    result = {'p_sent_score': p_sent_score}
     with open('diversity_result.txt', 'a') as outfile:
         json.dump(result, outfile)
+
