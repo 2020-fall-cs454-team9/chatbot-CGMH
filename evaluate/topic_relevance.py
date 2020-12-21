@@ -4,6 +4,8 @@ import pandas as pd
 import gensim
 import spacy
 import nltk
+import sys
+
 
 def processText(text):
     nlp = spacy.load("en_core_web_md")
@@ -19,72 +21,81 @@ def processText(text):
         result.append(token.lemma_)
     return " ".join(result)
 
-# Sports
-input_text = [
-"What is the minimum number of people required to play tennis?",
-"Are female tennis players required to wear only white clothes?",
-"How can I be a ball boy?",
-"How many people are required for a football match?",
-"How big is a soccer ball?",
-"How many hours of practice are required to be a successful figure skater?",
-"How do I run?",
-"What if I fall down when running?",
-"Is it okay to drink water during a marathon?",
-"Can I wear a high heel when playing soccer?",
-"What do I do if a cat comes in during a soccer game?",
-"What is the difference between soccer and football?",
-"Is it painful if I get hit by a tennis ball?",
-"Can I paint my tennis ball red?",
-"Can I paint my soccer ball blue?"
-]
+# Getting Arguments
+input_text = []
+f = sys.argv[1]
+keyword = sys.argv[2]
+file = open("output.txt", "r")
+for x in file:
+  if keyword in x:
+    input_text.append(x)
+
+# # Sports
+# input_text = [
+# "What is the minimum number of people required to play tennis?",
+# "Are female tennis players required to wear only white clothes?",
+# "How can I be a ball boy?",
+# "How many people are required for a football match?",
+# "How big is a soccer ball?",
+# "How many hours of practice are required to be a successful figure skater?",
+# "How do I run?",
+# "What if I fall down when running?",
+# "Is it okay to drink water during a marathon?",
+# "Can I wear a high heel when playing soccer?",
+# "What do I do if a cat comes in during a soccer game?",
+# "What is the difference between soccer and football?",
+# "Is it painful if I get hit by a tennis ball?",
+# "Can I paint my tennis ball red?",
+# "Can I paint my soccer ball blue?"
+# ]
 
 
 
-# Shopping
-input_text2 = [
-"How much are these shoes?",
-"Can I buy a human?",
-"Can I buy a boyfriend?",
-"Can you give me money so that I can buy a new iphone?",
-"Can I buy you?",
-"How much is a brand-new IPad?",
-"Can I buy a house?",
-"What is the mean delivery fee in Amazon?",
-"How much is ChicChoc?",
-"How much is a desktop?",
-"How can I go shopping?",
-"Where is the nearest shopping mall?",
-"How much is americano?",
-"How can I purchase the watch?",
-"What store sells gaming keyboard?"
-]
+# # Shopping
+# input_text2 = [
+# "How much are these shoes?",
+# "Can I buy a human?",
+# "Can I buy a boyfriend?",
+# "Can you give me money so that I can buy a new iphone?",
+# "Can I buy you?",
+# "How much is a brand-new IPad?",
+# "Can I buy a house?",
+# "What is the mean delivery fee in Amazon?",
+# "How much is ChicChoc?",
+# "How much is a desktop?",
+# "How can I go shopping?",
+# "Where is the nearest shopping mall?",
+# "How much is americano?",
+# "How can I purchase the watch?",
+# "What store sells gaming keyboard?"
+# ]
 
 
 
-# Music
-input_text3 = [
-"What music do you prefer?",
-"Do you know Rachmaninoff piano concerto no.2?",
-"Do you like classical music?",
-"How many times did you listen to Gangnam Style?",
-"What is the pitch of this song?",
-"What is your favorite music?",
-"Can I listen to music on YouTube?",
-"What’s your KakaoTalk profile music?",
-"Do you often listen to music?",
-"Are you part of any musical groups?",
-"What genre of music do you prefer?",
-"Do you like Brahms?",
-"Do you like Vitas?",
-"Have you listened to Eminem?",
-"What is your favorite idol music?"
-]
+# # Music
+# input_text3 = [
+# "What music do you prefer?",
+# "Do you know Rachmaninoff piano concerto no.2?",
+# "Do you like classical music?",
+# "How many times did you listen to Gangnam Style?",
+# "What is the pitch of this song?",
+# "What is your favorite music?",
+# "Can I listen to music on YouTube?",
+# "What’s your KakaoTalk profile music?",
+# "Do you often listen to music?",
+# "Are you part of any musical groups?",
+# "What genre of music do you prefer?",
+# "Do you like Brahms?",
+# "Do you like Vitas?",
+# "Have you listened to Eminem?",
+# "What is your favorite idol music?"
+# ]
 
 
 
 sentences = []
 
-for sentence in input_text3:
+for sentence in input_text:
     sentences.append(processText(sentence))
 
 for i in range(len(sentences)):
