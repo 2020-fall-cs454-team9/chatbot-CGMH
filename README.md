@@ -72,7 +72,7 @@ The file `evaluate/diversity.py` is used to evaluate both [1] the generated ques
 
 1. Generate the questions file `data/output/output.txt`.
 
-2. Use this file's path as the `file` argument.
+2. Use this file's relative path as the `file` argument.
 
 ### Evaluate Chatbot Responses
 
@@ -82,7 +82,7 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 
 2. Parse the conversation using `evaluate/parseMessages.py` (for usage, add the `--help` argument for details.)
 
-3. Use the parsed file's path as the `file` argument.
+3. Use the parsed file's relative path as the `file` argument.
 
 ### Usage
 
