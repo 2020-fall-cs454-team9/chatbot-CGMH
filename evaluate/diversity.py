@@ -126,5 +126,5 @@ print("RESULTS from", a, 'to', b)
 for msglist in messages[int(a): int(b)+1]:
     sent_score, p_sent_score, word_score = calcSimilarityScore(msglist[:])
     result = {'index': messages.index(msglist), 'p_sent_score': p_sent_score}
-    with open('result.txt', 'a') as outfile:
+    with open('diversity_result.txt', 'a') as outfile:
         json.dump(result, outfile)
