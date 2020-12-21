@@ -94,7 +94,7 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 
 > relative path of the `.txt` file to be used for evaluation.
 
-### Optional Arguments (Only for Chatbot Responses)
+### Optional Arguments
 
 `-h, --help`
 
@@ -106,9 +106,13 @@ For evaluation, we used Pandorabots' [Kuki](https://www.messenger.com/t/chatbots
 
 `-a A`
 
+_Only for chatbot responses_
+
 > index of the first message to evaluate (type: int, default: 0)
 
 `-b B`
+
+_Only for chatbot responses_
 
 > index of the last message to evaluate (type: int, default: last index)
 
